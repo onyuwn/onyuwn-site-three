@@ -1,0 +1,19 @@
+#header {
+    height: 5em;
+    width: 100%;
+}
+
+#header h1 {
+    color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: calc( 100vh - 10em );
+    width: 100%;
+}
