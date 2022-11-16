@@ -103,8 +103,8 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
 
     for(float i = 0.0;i<maxIterations;i++) {
       z = squareImaginary(z) + coord;
-      if(length(z) > 2.0) {
-        result = vec4(i/maxIterations, cos(maxIterations) + 1.0, i/pow(maxIterations, 0.5 ), 0.0);
+      if(length(z) > 2.0) { // 2 is the escape value
+        result = vec4(sin(i/20.0), cos(i/20.0), tan(i/20.0), 0.0);
         break;
       }
     }
@@ -113,9 +113,9 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
 
   void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    st /= (cos(u_time) + 2.0); // zoom by decreasing viewport
-    st.x -= .775;
-    st.y -= .01;
+    st /= (10.0 * (cos(u_time) + 10.0)); // zoom by decreasing viewport
+    st.x -= .769;
+    st.y -= .1;
     vec4 shade = iterateMandelbrot(st);
     gl_FragColor = shade;
   }
