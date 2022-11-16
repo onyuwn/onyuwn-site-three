@@ -1,7 +1,7 @@
 canvas {
     width: 25rem;
     height: 25rem;
-    mergin-right:1rem;
+    border:2px solid rgb(0, 42, 255);
 }
 
 #editor {

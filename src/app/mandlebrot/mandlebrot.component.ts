@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
+import { BufferGeometry } from 'three';
 
 @Component({
   selector: 'mandlebrot',
@@ -85,7 +86,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
   }
   `;
 
-  private mandlebrotFrag: string = `
+  mandlebrotFrag: string = `
   uniform vec2 u_resolution;
   uniform float u_time;
   float maxIterations = 255.0;
@@ -179,6 +180,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
 
   updateShader(event: any) {
     if(event.target) {
+      this.mandlebrotPlane.dispose();
       this.fragmentShader = event.target.value;
       var mandlebrotMaterial = new THREE.ShaderMaterial({uniforms:this.uniforms, vertexShader:this.vertexShader, fragmentShader:this.fragmentShader});
       var mandlebrotMesh = new THREE.Mesh(this.mandlebrotPlane, mandlebrotMaterial);  
