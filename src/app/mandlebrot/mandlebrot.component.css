@@ -1,4 +1,17 @@
 canvas {
     width: 25rem;
-    height: 25em;
+    height: 25rem;
+    mergin-right:1rem;
+}
+
+#editor {
+    width:25rem;
+    height:25rem;
+    margin-left: 1em;
+} 
+
+#editorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
