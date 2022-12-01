@@ -1,4 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
 body {
-    background-color: black;
+    background: linear-gradient(blue, white 8%, black 50%);
+    margin: 0 !important;
+    width: 100vw;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color:blue;
 }
