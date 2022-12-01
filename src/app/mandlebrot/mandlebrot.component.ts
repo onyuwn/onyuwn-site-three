@@ -105,7 +105,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
     for(float i = 0.0;i<maxIterations;i++) {
       z = squareImaginary(z) + coord;
       if(length(z) > 2.0) { // 2 is the escape value
-        result = vec4(sin(i/20.0), cos(i/20.0), tan(i/20.0), 0.0);
+        result = vec4(sin(i/20.0), cos(i/20.0), tan(i/20.0), 1.0);
         break;
       }
     }
@@ -151,7 +151,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
     light.position.z = 2;
 
     this.scene = new THREE.Scene;
-    this.scene.background = new THREE.Color(0x000000);
+    this.scene.background = new THREE.Color(0xFFFFFF);
     
 
     var mandlebrotMaterial = new THREE.ShaderMaterial({uniforms:this.uniforms, vertexShader:this.vertexShader, fragmentShader:this.mandlebrotFrag});
