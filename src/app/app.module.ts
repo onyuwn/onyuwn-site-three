@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { CandleComponent } from './candle/candle.component';
 import { MandlebrotComponent } from './mandlebrot/mandlebrot.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainContentComponent,
     CandleComponent,
-    MandlebrotComponent
+    MandlebrotComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
