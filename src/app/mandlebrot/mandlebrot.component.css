@@ -8,6 +8,8 @@ canvas {
     width:25rem;
     height:25rem;
     margin-left: 1em;
+    white-space: nowrap;
+    overflow: auto;
 } 
 
 #editorContainer {
@@ -24,10 +26,6 @@ canvas {
     #editor {
         display: none;
     }
-
-    #editorContainer canvas {
-        height: 40rem;
-    }
 }
 
 @media (max-width: 600px) {
@@ -40,7 +38,7 @@ canvas {
     }
 
     canvas {
-        height: 5rem;
-        width: 5rem;
+        height: 15rem;
+        width: 15rem;
     }
 }

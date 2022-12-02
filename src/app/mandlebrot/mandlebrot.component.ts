@@ -15,7 +15,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
   @Input() public cameraZ: number = 1;
   @Input() public fieldOfView: number = 1;
   @Input('nearClipping') public nearClippingPlane: number = 1;
-  @Input('farClipping') public farClippingPlane: number = 1000;
+  @Input('farClipping') public farClippingPlane: number = 2;
 
   private uniforms: any = {
     u_time: { type: "f", value: 1.0 },
@@ -24,8 +24,10 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
   };
 
   private vertexShader: string = `
+  uniform float u_time;
+
   void main() {
-    gl_Position = vec4( position, 1.0 );
+    gl_Position = vec4(position.x, position.y, position.z, 1.0);
   }
   `;
 
@@ -98,9 +100,10 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
     );
   }
 
-  vec4 getMandlebrot(vec2 coord, float radius) {
+  vec4 getMandlebrot(vec2 coord, vec2 radius) {
     vec2 z = vec2(0,0);
-    vec4 result = vec4(0.0, pow(coord.x, 2.0), 1.0, 1.0);
+    //vec4 result = vec4(radius.x, 0.0, radius * 100.0);
+    vec4 result = vec4(0.0);
 
     for(float i = 0.0;i<maxIterations;i++) {
       z = squareImaginary(z) + coord;
@@ -114,13 +117,14 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
 
   void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    vec2 cPos = -1.0 + 2.0 * st;
+    vec2 cPos = -.25 + .5 * st;
     float cLength = length(cPos);
-    st /= (10.0 * (cos(u_time) + 10.0)); // zoom by decreasing viewport
+    st /= (10.0 * (cos(u_time) + 100.0)); // zoom by decreasing viewport
     st.x -= .769;
     st.y -= .1;
-    st = st + (cPos / cLength) * cos(cLength * 10.0 - u_time * 4.0) * (.005 * cos(u_time/10.0));
-    vec4 shade = getMandlebrot(st, cLength);
+    vec2 fudge = (cPos / cLength) * cos(cLength * 10.0 - u_time * 4.0) * (.005 * cos(u_time/10.0)); 
+    st = st + fudge;
+    vec4 shade = getMandlebrot(st, fudge);
     gl_FragColor = shade;
   }
   `
@@ -193,7 +197,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
   }
 
   private onWindowResize() {
-    this.renderer.setPixelRatio(devicePixelRatio);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
     this.uniforms.u_resolution.value.x = this.renderer.domElement.width;
     this.uniforms.u_resolution.value.y = this.renderer.domElement.height;
@@ -201,7 +205,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
 
   private initRenderer() {
     this.renderer = new THREE.WebGLRenderer({ canvas:this.canvas });
-    this.renderer.setPixelRatio(devicePixelRatio);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
 
     this.uniforms.u_resolution.value.x = this.renderer.domElement.width;
