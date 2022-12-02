@@ -47,8 +47,9 @@ export class CandleComponent implements OnInit, AfterViewInit {
   //floor
   private floorPlane = new THREE.PlaneGeometry( 10, 10, 10 );
   private floorTexture = new THREE.TextureLoader().load("../assets/floor.png");
-  private floorMaterial = new THREE.MeshPhongMaterial({map:this.floorTexture, side:THREE.DoubleSide});
-  private floorMesh = new THREE.Mesh(this.floorPlane, this.floorMaterial);
+  //private floorMaterial = new THREE.MeshPhongMaterial({map:this.floorTexture, side:THREE.DoubleSide});
+  //private floor material = new THREE.MeshBasicMaterial({map:})
+  //private floorMesh = new THREE.Mesh(this.floorPlane, this.floorMaterial);
 
   private renderer!: THREE.WebGLRenderer;
 
@@ -74,13 +75,14 @@ export class CandleComponent implements OnInit, AfterViewInit {
 
     this.scene = new THREE.Scene;
     this.scene.background = new THREE.Color(0x000000);
+    this.scene.background = null;
 
     this.flameMesh.position.y = 2.75;
-    this.floorMesh.rotation.x = (Math.PI / 2) + .2;
+    // this.floorMesh.rotation.x = (Math.PI / 2) + .2;
 
     this.scene.add(light);
     this.scene.add(this.flameMesh);
-    this.scene.add(this.floorMesh);
+    // this.scene.add(this.floorMesh);
 
     let aspectRatio = this.getAspectRatio();
     this.camera = new THREE.PerspectiveCamera(
@@ -109,9 +111,10 @@ export class CandleComponent implements OnInit, AfterViewInit {
   }
 
   private initRenderer() {
-    this.renderer = new THREE.WebGLRenderer({ canvas:this.canvas });
+    this.renderer = new THREE.WebGLRenderer({ canvas:this.canvas, alpha:true });
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+    this.renderer.setClearColor(0x000000,0)
 
     let component: CandleComponent = this;
     (function render() {

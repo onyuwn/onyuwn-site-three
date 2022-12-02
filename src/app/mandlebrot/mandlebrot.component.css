@@ -15,3 +15,32 @@ canvas {
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 800px) {
+    #editorContainer {
+        flex-direction: column;
+    }
+
+    #editor {
+        display: none;
+    }
+
+    #editorContainer canvas {
+        height: 40rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #editorContainer {
+        flex-direction: column;
+    }
+
+    #editor {
+        display: none;
+    }
+
+    canvas {
+        height: 5rem;
+        width: 5rem;
+    }
+}

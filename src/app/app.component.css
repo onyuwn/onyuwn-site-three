@@ -1,0 +1,39 @@
+#header {
+    height: 5em;
+    width: 100%;
+}
+
+#header h1 {
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    color:rgb(0, 0, 0);
+    font-family: 'Times New Roman', serif;
+}
+
+.headerText {
+    font-size: 2em;
+    margin:0;
+    text-align: center;
+}
+
+.mute {
+    font-family: monospace !important;
+    font-size: .5em !important;
+}
+
+.nav {
+    color: blue !important;
+    background: linear-gradient(rgb(190, 190, 190) 70%, rgb(133, 133, 133));
+    display: flex;
+    justify-content: center;
+}
+
+.nav a {
+    padding: .5em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
