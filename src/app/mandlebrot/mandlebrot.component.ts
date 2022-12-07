@@ -91,7 +91,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
   mandlebrotFrag: string = `
   uniform vec2 u_resolution;
   uniform float u_time;
-  float maxIterations = 255.0;
+  float maxIterations = 100.0;
 
   vec2 squareImaginary(vec2 number) {
     return vec2(
@@ -100,31 +100,51 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
     );
   }
 
-  vec4 getMandlebrot(vec2 coord, vec2 radius) {
+  vec3 hsb2rgb(in vec3 c) {
+    vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),
+                             6.0)-3.0)-1.0,
+                             0.0,
+                             1.0);
+    rgb = rgb*rgb*(3.0-2.0*rgb);
+    return c.z * mix(vec3(1.0), rgb, c.y);
+  }
+
+  vec4 getMandlebrot(vec2 coord) {
     vec2 z = vec2(0,0);
-    //vec4 result = vec4(radius.x, 0.0, radius * 100.0);
-    vec4 result = vec4(0.0);
+    vec4 result = vec4(0,0,0, 1.0);
 
     for(float i = 0.0;i<maxIterations;i++) {
       z = squareImaginary(z) + coord;
       if(length(z) > 2.0) { // 2 is the escape value
-        result = vec4(sin(i/20.0), cos(i/20.0), tan(i/20.0), 1.0);
+        result = vec4(hsb2rgb(vec3(sin(i/20.0), cos(i/20.0), tan(i/20.0))), 1.0);
         break;
       }
     }
     return result;
   }
 
+  vec4 circle(vec2 coord) {
+    float dist = length(coord - vec2(.5,.5));
+    if(dist < .3) {
+      vec3 shade = hsb2rgb(vec3((abs(coord.x - .5) * cos(u_time) * 5.0), 1.0, 1.0 - (dist/1.0)));
+      return vec4(shade,1.0);
+    } else {
+      return vec4(0.0);
+    }
+  }
+
   void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    vec2 cPos = -.25 + .5 * st;
+    vec2 cPos = (-10.0 * sin(u_time)) + (20.0 * cos(u_time)) * st;
     float cLength = length(cPos);
-    st /= (10.0 * (cos(u_time) + 100.0)); // zoom by decreasing viewport
-    st.x -= .769;
-    st.y -= .1;
-    vec2 fudge = (cPos / cLength) * cos(cLength * 10.0 - u_time * 4.0) * (.005 * cos(u_time/10.0)); 
-    st = st + fudge;
-    vec4 shade = getMandlebrot(st, fudge);
+    //st /= (100.0 * (cos(u_time)) + 100.0); // zoom by decreasing viewport
+    st /= .4;
+    st.x -= 2.0;
+    st.y -= 1.25;
+    st += (cPos / cLength) * cos(cLength * 2.0 - u_time * 4.0) * (cos(u_time)); 
+    //st += (cPos / cLength) * cos(cLength * 10.0 - u_time * 4.0); 
+    vec4 shade = getMandlebrot(st);
+    //gl_FragColor = circle(st);
     gl_FragColor = shade;
   }
   `
@@ -214,6 +234,7 @@ export class MandlebrotComponent implements OnInit, AfterViewInit {
     window.addEventListener('resize', this.onWindowResize, false);
 
     let component: MandlebrotComponent = this;
+    let canvas: HTMLCanvasElement = this.canvas;
     (function render() {
       requestAnimationFrame(render);
       component.uniforms.u_time.value += component.clock.getDelta();

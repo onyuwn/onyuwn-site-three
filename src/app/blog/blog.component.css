@@ -1,0 +1,68 @@
+.postHeader {
+    border-bottom:1px solid rgb(163, 255, 163);
+    padding: .25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.postHeader p {
+    margin: 0 !important;
+    font-size: 2em;
+}
+
+.postHeader .date {
+    font-size: 1em;
+}
+
+.postFeed {
+    margin-top:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.post {
+    background-color: rgba(255, 255, 255, 0.849);
+    width: 60%;
+}
+
+.postBody {
+    padding: .25em;
+}
+
+.shaderPreview {
+    width: 10em;
+    height: 10em;
+    border: 1px solid rgb(163, 255, 163);
+    margin-right: 1em;
+}
+
+.shaderSection {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.shaderSection p {
+    margin: 0 !important;
+}
+
+.shaderPlaceholder {
+    width: 10em;
+    height: 10em;
+    position: absolute;
+    background-color: white;
+    border: 1px solid rgb(163, 255, 163);
+    backdrop-filter: blur(10px);
+    transition: opacity .5s;
+}
+
+.showing {
+    opacity: .75;
+}
+
+.hidden {
+    opacity: 0;
+}
