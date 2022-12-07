@@ -110,13 +110,19 @@ export class CandleComponent implements OnInit, AfterViewInit {
     // this.flameMesh.rotation.y += this.rotationSpeedY;
   }
 
+  private onWindowResize() {
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
+  }
+
   private initRenderer() {
     this.renderer = new THREE.WebGLRenderer({ canvas:this.canvas, alpha:true });
-    this.renderer.setPixelRatio(devicePixelRatio);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
     this.renderer.setClearColor(0x000000,0)
 
     let component: CandleComponent = this;
+    window.addEventListener('resize', this.onWindowResize, false);
     (function render() {
       requestAnimationFrame(render);
       component.animate();
