@@ -40,6 +40,13 @@
     margin-right: 1em;
 }
 
+.shaderPreviewXl {
+    width: 30em;
+    height: 30em;
+    border: 1px solid rgb(163, 255, 163);
+    margin-right: 1em;
+}
+
 .shaderSection {
     display: flex;
     justify-content: flex-start;

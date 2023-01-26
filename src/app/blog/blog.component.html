@@ -1,25 +1,34 @@
-<div class="postFeed">
-    <div class="post">
-        <div class="postHeader">
-            <p class="title">Ripple.</p>
-            <p class="date">12/5/2022</p>
+<ng-container *ngIf="debug===true">
+    <div style="display: flex;justify-content: center;">
+        <div id="post" style="display: flex; justify-content:center; flex-direction: column;">
+            <canvas id="shaderPreview" class="shaderPreviewXl" #canvas></canvas>
         </div>
-        <div class="postBody">
-            <div class="textSection">
-                <p>Trying to create a ground warping effect in my game. To be used when a boss stomps or hops around the level. Thinking about implementing This
-                with a vertex shader on the floor material... some sort of point and ripple effect. Probably the most common example of this is with water ripple
-                shaders, but I'm trying to create something tighter and more abrasive.
-                </p>
+    </div>
+</ng-container>
+<ng-container *ngIf="debug===false">
+    <div class="postFeed">
+        <div class="post">
+            <div class="postHeader">
+                <p class="title">Ripple.</p>
+                <p class="date">12/5/2022</p>
             </div>
-            <div class="shaderSection">
-                <div class="shaderView" (click)="toggleAvailableShader()">
-                    <div class="shaderPlaceholder" [ngClass]="{'showing': shaderAvailable === false, 'hidden': shaderAvailable === true}"></div>
-                    <canvas class="shaderPreview" #canvas></canvas>
+            <div class="postBody">
+                <div class="textSection">
+                    <p>Trying to create a ground warping effect in my game. To be used when a boss stomps or hops around the level. Thinking about implementing This
+                    with a vertex shader on the floor material... some sort of point and ripple effect. Probably the most common example of this is with water ripple
+                    shaders, but I'm trying to create something tighter and more abrasive.
+                    </p>
                 </div>
-                <div class="shaderSupplement">
-                    <p>This is a ripple in its most basic form.</p>
+                <div class="shaderSection">
+                    <div class="shaderView" (click)="toggleAvailableShader()">
+                        <div class="shaderPlaceholder" [ngClass]="{'showing': shaderAvailable === false, 'hidden': shaderAvailable === true}"></div>
+                        <canvas class="shaderPreview" #canvas></canvas>
+                    </div>
+                    <div class="shaderSupplement">
+                        <p>This is a ripple in its most basic form.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</ng-container>
