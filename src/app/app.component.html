@@ -1,12 +1,15 @@
-<div class="header">
-    <p class="headerText">onyuwn <span class="mute">dot net</span></p>
-    <!-- <p class="headerText"><span class="mute">jake herman - full stack developer - technical artist</span></p> -->
-    <div class="nav">
-        <a routerLink="/">home</a>
-        <a routerLink="/blog">blog</a>
-        <a>gallery</a>
-        <a>contact</a>
+<div class="wrapper">
+    <div class="sidebar">
+        <h1 class="headerText"><a routerLink="/">onyuwn</a></h1>
+        <!-- <p class="headerText"><span class="mute">jake herman - full stack developer - technical artist</span></p> -->
+        <div class="nav">
+            <a routerLink="/blog">blog</a>
+            <a>gallery</a>
+            <a>contact</a>
+        </div>
+        <candle class="footer"></candle>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
     </div>
 </div>
-<router-outlet></router-outlet>
-<!-- <candle class="footer"></candle> -->

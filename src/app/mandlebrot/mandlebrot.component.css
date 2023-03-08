@@ -1,17 +1,18 @@
 canvas {
     width: 25rem;
     height: 25rem;
-    border:2px solid rgb(0, 42, 255);
+    border:2px solid rgb(255, 0, 0);
+    box-shadow: 2px 5px 10px rgb(46, 46, 46);
 }
 
 #editor {
     width:25rem;
-    height:25rem;
+    height:20rem;
     margin-left: 1em;
     white-space: nowrap;
     overflow: auto;
-    border:2px solid rgb(0, 42, 255);
-    border-style: inset;
+    border:2px solid rgb(255, 0, 0);
+    box-shadow: 2px 5px 10px rgb(46, 46, 46);
 } 
 
 #editorContainer {
