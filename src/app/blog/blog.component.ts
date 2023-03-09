@@ -17,7 +17,7 @@ export class BlogComponent implements OnInit {
   @Input('nearClipping') public nearClippingPlane: number = 1;
   @Input('farClipping') public farClippingPlane: number = 2;
 
-  debug: boolean = true;
+  debug: boolean = false;
 
   uniforms: any = {
     u_time: { type: "f", value: 1.0 },

@@ -13,6 +13,7 @@
     width:100%;
     background-color: white;
     overflow: none;
+    overflow-x: hidden;
 }
 
 @keyframes tickerslide {
@@ -66,6 +67,31 @@
     display: flex;
     align-items: center;
 }
+
+.go:hover > #g {
+    animation: upDown .5s linear infinite;
+}
+
+.go:hover > #o1 {
+    animation: upDown .5s linear .1s infinite;
+}
+
+.go:hover > #o2 {
+    animation: upDown .5s linear .2s infinite;
+}
+
+.go:hover > #o3 {
+    animation: upDown .5s linear .3s infinite;
+}
+
+.go:hover > #o4 {
+    animation: upDown .5s linear .4s infinite;
+}
+
+.go:hover > #o5 {
+    animation: upDown .5s linear .5s infinite;
+}
+
 
 .go #g {
     height: 125px;

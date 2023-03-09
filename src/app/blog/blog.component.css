@@ -1,5 +1,5 @@
 .postHeader {
-    border-bottom:1px solid rgb(163, 255, 163);
+    border-bottom:1px solid rgb(255, 0, 0);
     padding: .25em;
     display: flex;
     justify-content: space-between;
@@ -26,7 +26,47 @@
 
 .post {
     background-color: rgba(255, 255, 255, 0.849);
-    width: 60%;
+    width: 80%;
+    box-shadow: 1px 4px 8px rgba(46, 46, 46, 0.441);
+    margin-bottom: 1em;
+}
+
+.gifWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageWrapper img {
+    width: 30%;
+    height: 30%;
+}
+
+.videoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.videoWrapper video {
+    width: 75%;
+    height: 75%;
+}
+
+.imageRow {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.gifWrapper img {
+    width: 75%;
 }
 
 .postBody {
@@ -36,14 +76,14 @@
 .shaderPreview {
     width: 10em;
     height: 10em;
-    border: 1px solid rgb(163, 255, 163);
+    border: 1px solid rgb(255, 0, 0);
     margin-right: 1em;
 }
 
 .shaderPreviewXl {
     width: 30em;
     height: 30em;
-    border: 1px solid rgb(163, 255, 163);
+    border: 1px solid rgb(255, 0, 0);
     margin-right: 1em;
 }
 
@@ -61,7 +101,7 @@
     height: 10em;
     position: absolute;
     background-color: white;
-    border: 1px solid rgb(163, 255, 163);
+    border: 1px solid rgb(255, 0, 0);
     backdrop-filter: blur(10px);
     transition: opacity .5s;
 }

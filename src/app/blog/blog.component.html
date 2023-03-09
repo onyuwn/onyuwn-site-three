@@ -9,7 +9,24 @@
     <div class="postFeed">
         <div class="post">
             <div class="postHeader">
-                <p class="title">Ripple.</p>
+                <p class="title">Shattering.. piggies </p>
+                <p class="date">1/20/2022</p>
+            </div>
+            <div class="postBody">
+                <div class="textSection">
+                    <p>
+                    </p>
+                    <div class="videoWrapper">
+                        <video controls>
+                            <source src="/assets/piggies/piggieshatter2.webm"/>
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post">
+            <div class="postHeader">
+                <p class="title">Point and Ripple</p>
                 <p class="date">12/5/2022</p>
             </div>
             <div class="postBody">
@@ -19,16 +36,60 @@
                     shaders, but I'm trying to create something tighter and more abrasive.
                     </p>
                 </div>
-                <div class="shaderSection">
-                    <div class="shaderView" (click)="toggleAvailableShader()">
-                        <div class="shaderPlaceholder" [ngClass]="{'showing': shaderAvailable === false, 'hidden': shaderAvailable === true}"></div>
-                        <canvas class="shaderPreview" #canvas></canvas>
-                    </div>
-                    <div class="shaderSupplement">
-                        <p>This is a ripple in its most basic form.</p>
+                <div class="gifWrapper">
+                    <img src="/assets/ripplepost/bubbles.gif"/>
+                </div>
+            </div>
+        </div>
+        <div class="post">
+            <div class="postHeader">
+                <p class="title">Bubbles Screensaver</p>
+                <p class="date">10/5/2022</p>
+            </div>
+            <div class="postBody">
+                <div class="textSection">
+                    <p>Experiments in creating a function for a bubble screensaver. I think I spent the whole month trying to
+                    figure out the best process for illustrating bubbles before I even touched a bubble screensaver.
+                    </p>
+                </div>
+                <div class="imageRow imageWrapper" style="margin-bottom:1em">
+                    <img src="assets/bubblespost/purpbubb.png"/>
+                    <img src="assets/bubblespost/bubbleirrri.png"/>
+                    <img src="assets/bubblespost/whitbubb.png"/>
+                </div>
+                <div class="gifWrapper">
+                    <img src="assets/bubblespost/bubblesbounce.gif"/>
+                </div>
+            </div>
+        </div>
+        <div class="post">
+            <div class="postHeader">
+                <p class="title">Little Guys</p>
+                <p class="date">2/17/2022</p>
+            </div>
+            <div class="postBody">
+                <div class="textSection">
+                    <p>
+                    </p>
+                    <div class="videoWrapper">
+                        <video controls>
+                            <source src="/assets/littleguys/littleguys1.webm"/>
+                        </video>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </ng-container>
+
+
+
+<!-- <div class="shaderSection">
+    <div class="shaderView" (click)="toggleAvailableShader()">
+        <div class="shaderPlaceholder" [ngClass]="{'showing': shaderAvailable === false, 'hidden': shaderAvailable === true}"></div>
+        <canvas class="shaderPreview" #canvas></canvas>
+    </div>
+    <div class="shaderSupplement">
+        <p>This is a ripple in its most basic form.</p>
+    </div>
+</div> -->
