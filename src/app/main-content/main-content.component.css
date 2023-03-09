@@ -61,6 +61,7 @@
 .ticker h3 {
     font-family: monospace;
     animation: tickerslide 10s linear infinite;
+    width: 100%;
 }
 
 .go {
