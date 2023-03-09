@@ -7,7 +7,36 @@
     margin-top:10em;
 }
 
-@media (max-width: 600px) {
+.ticker {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width:100%;
+    background-color: white;
+    overflow: none;
+}
+
+@keyframes tickerslide {
+    0% {
+        transform: translate(0,0);
+        opacity: 0;
+    }
+
+    50%  {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(100%,0);
+        opacity: 0;
+    }
+}
+
+.ticker h3 {
+    font-family: monospace;
+    animation: tickerslide 2s linear infinite;
+}
+
+@media (max-width: 640px) {
     #content {
         margin-top:1em;
     }
