@@ -8,6 +8,7 @@ import { CandleComponent } from './candle/candle.component';
 import { MandlebrotComponent } from './mandlebrot/mandlebrot.component';
 import { BlogComponent } from './blog/blog.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     CandleComponent,
     MandlebrotComponent,
     BlogComponent,
-    GalleryComponent
+    GalleryComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
