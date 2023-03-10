@@ -7,6 +7,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { CandleComponent } from './candle/candle.component';
 import { MandlebrotComponent } from './mandlebrot/mandlebrot.component';
 import { BlogComponent } from './blog/blog.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BlogComponent } from './blog/blog.component';
     MainContentComponent,
     CandleComponent,
     MandlebrotComponent,
-    BlogComponent
+    BlogComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,7 @@
 .post {
     background-color: rgba(255, 255, 255, 0.849);
     width: 80%;
+    max-width: 80em;
     box-shadow: 1px 4px 8px rgba(46, 46, 46, 0.441);
     margin-bottom: 1em;
 }
