@@ -21,3 +21,13 @@
 .contactInfo {
     transform: scaleX(200%);
 }
+
+@media (max-width:640px) {
+    .contactInfo {
+        transform: none;
+    }
+
+    .contactItem {
+        width: 80%;
+    }
+}

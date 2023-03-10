@@ -123,12 +123,6 @@
     animation: upDown 1s linear .5s infinite;
 }
 
-@media (max-width: 640px) {
-    #content {
-        margin-top:1em;
-    }
-}
-
 .workTable {
     padding-left:2em;
     margin-top:10em;
@@ -154,4 +148,22 @@
     color: red;
     font-weight: 900;
     font-size: 2em;
+}
+
+@media (max-width: 640px) {
+    #content {
+        margin-top:1em;
+    }
+
+    #o4, #o5 {
+        display: none;
+    }
+
+    .go {
+        margin-top:1em;
+    }
+
+    .workTable {
+        margin-top: 2em;
+    }
 }
