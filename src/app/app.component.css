@@ -41,7 +41,7 @@ h1 a {
 
 .wrapper {
     display: flex;
-    height: 100vh;
+    height: 100%;
 }
 
 .content {
