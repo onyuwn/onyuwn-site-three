@@ -18,6 +18,14 @@
                         making objects shatter in unity is very simple and satisfying. simply take your base model and create separations along edges in blender.
                     </p>
                 </div>
+                <div class="imageWrapper">
+                    <img src="https://artitems.blob.core.windows.net/$web/separatedpig.png"/>
+                </div>
+                <div class="textSection">
+                    <p>
+                        when the pig enemy is shot, the base entity model is destroyed and in its place I instantiate the separated model. the separated model is a rigid body. add some force to the rigid body on instantiation for better effects.
+                    </p>
+                </div>
                 <div class="videoWrapper">
                     <video controls>
                         <source src="https://artitems.blob.core.windows.net/$web/piggieshatter2.webm"/>
@@ -25,7 +33,9 @@
                 </div>
                 <div class="textSection">
                     <p>
-                        when the pig enemy is shot, the base entity model is destroyed and in its place I instantiate the separated model. the separated model is a rigid body. add some force to the rigid body on instantiation for better effects.
+                        Definitely could add some more variation in the "shattering" here. I guess this really isn't shattering to begin with, I just thought it was pretty funny/eerie how their faces just popped off.
+                        Also wondering if I could create some script in blender to develop these shatter patterns for me randomly. Some sort of algorithm to traverse the edges... The hardest part I imagine would be making high
+                        resolution shatters and figuring out how to create many closed polygon separations/edge loops that don't intersect.
                     </p>
                 </div>
             </div>
@@ -47,7 +57,11 @@
                 </div>
                 <div class="textSection">
                     I have this ripple effect running in a vertex shader. The big G Boss casts a ray into the ground, on hit the coords put into the vertex shader via uniforms.
-                    
+                    The "ripple effect" function I'm using is based off of this <a href="https://en.wikipedia.org/wiki/Sombrero_function">sombrero??</a> function. I run the vertices through
+                    this based on their distance to the origin of impact. Over time, the wave is dampened until there's basically no movement. I haven't been able to spend too much time optimizing this,
+                    I think I just got this basic ripple after a few days of trying to understand the different coordinate systems... so that my impact input (world) coordinate aligned with the vertices.
+                    But ideally the wave would work inverse, the points farthest from the impact will be the most unstable as if to create a crater. I also want to continue devloping this function to see if 
+                    I can get it to work on more complicated surfaces instead of just flat planes.  
                 </div>
             </div>
         </div>
@@ -67,8 +81,37 @@
                     <img src="assets/bubblespost/bubbleirrri.png"/>
                     <img src="assets/bubblespost/whitbubb.png"/>
                 </div>
+                <div class="textSection">
+                    <p>Ultimately don't feel like I have much to show with these illustrations, I was just so fried this month this is all I could focus on.
+                        I think I was primarily inspired by goofy anthropomorphized bubble machine photos.
+                    </p>
+                </div>
+                <div class="imageRow imageWrapper3">
+                    <img src="https://artitems.blob.core.windows.net/$web/squid1.png"/>
+                    <img src="https://artitems.blob.core.windows.net/$web/weirdgun.png"/>
+                </div>
+                <div class="textSection">
+                    <p>I then whipped these bubbles up in after effects. Just played around trying to make an expression that would make it easy to build these bubble screensavers.
+                    </p>
+                </div>
                 <div class="gifWrapper">
                     <img src="https://artitems.blob.core.windows.net/$web/bubblesbounce.gif"/>
+                </div>
+                <div class="textSection">
+                    <p>
+                        Nothing too crazy going on here, but fun to consider all of the variables to make this as modular as possible.
+                        I've set the initial positions to custom sliders (variables) and have their positions follow a triangle wave over time. this way when they reach the ~amplitude~/bounds of the composition
+                        their directions flip as if they were bouncing off of a surface..
+                        Currently I'm not handling the composition size, I'm also hardcoding in speeds when that could also be attached to a slider.
+                    </p>
+                </div>
+                <div class="imageWrapper2">
+                    <img src="https://artitems.blob.core.windows.net/$web/bubbleexpr.png"/>
+                </div>
+                <div class="textSection">
+                    <p>
+                        ultimately this was a stupid project I spent a lot of time on in a hyperfixated, fried kind of way. looks kind of cute and makes for easy overlays when I'm being lazy trying to build other compositions.
+                    </p>
                 </div>
             </div>
         </div>
@@ -80,24 +123,29 @@
             <div class="postBody">
                 <div class="textSection">
                     <p>
+                        "Little Guys" game I never did much with because of job..
                     </p>
-                    <div class="videoWrapper">
-                        <video controls>
-                            <source src="https://artitems.blob.core.windows.net/$web/$R3ZV83W.webm"/>
-                        </video>
-                    </div>
-                    <p>
-                    </p>
-                    <div class="videoWrapper">
-                        <video controls>
-                            <source src="https://artitems.blob.core.windows.net/$web/waterworl.webm"/>
-                        </video>
-                    </div>
-                    <div class="imageRow imageWrapper">
-                        <img src="https://artitems.blob.core.windows.net/$web/block191.png"/>
-                        <img src="https://artitems.blob.core.windows.net/$web/block1922.png"/>
-                        <img src="https://artitems.blob.core.windows.net/$web/blob2.png"/>
-                    </div>
+                </div>
+                <div class="videoWrapper">
+                    <video controls>
+                        <source src="https://artitems.blob.core.windows.net/$web/$R3ZV83W.webm"/>
+                    </video>
+                </div>
+                <p>School scene, I think this is when I learned how to shatter shit in unity. I think also I was working on a way to either throw the push pins or use them to pin things on the bulletin.</p>
+                <div class="videoWrapper">
+                    <video controls>
+                        <source src="https://artitems.blob.core.windows.net/$web/waterworl.webm"/>
+                    </video>
+                </div>
+                <div class="textSection">
+                    Basically these dudes are little finger puppets. The idea for this game is that you could attach yourself to various objects
+                    to gain advantage on the environment. Here there is a butt that excretes lethal farts onto some anthropomorphized book enemies.
+                    pretty gangster.
+                </div>
+                <div class="imageRow imageWrapper">
+                    <img src="https://artitems.blob.core.windows.net/$web/block191.png"/>
+                    <img src="https://artitems.blob.core.windows.net/$web/block1922.png"/>
+                    <img src="https://artitems.blob.core.windows.net/$web/blob2.png"/>
                 </div>
             </div>
         </div>
