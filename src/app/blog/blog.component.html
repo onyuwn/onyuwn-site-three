@@ -15,12 +15,18 @@
             <div class="postBody">
                 <div class="textSection">
                     <p>
+                        making objects shatter in unity is very simple and satisfying. simply take your base model and create separations along edges in blender.
                     </p>
-                    <div class="videoWrapper">
-                        <video controls>
-                            <source src="https://artitems.blob.core.windows.net/$web/piggieshatter2.webm"/>
-                        </video>
-                    </div>
+                </div>
+                <div class="videoWrapper">
+                    <video controls>
+                        <source src="https://artitems.blob.core.windows.net/$web/piggieshatter2.webm"/>
+                    </video>
+                </div>
+                <div class="textSection">
+                    <p>
+                        when the pig enemy is shot, the base entity model is destroyed and in its place I instantiate the separated model. the separated model is a rigid body. add some force to the rigid body on instantiation for better effects.
+                    </p>
                 </div>
             </div>
         </div>
@@ -38,6 +44,10 @@
                 </div>
                 <div class="gifWrapper">
                     <img src="https://artitems.blob.core.windows.net/$web/$R5RKMIZ.gif"/>
+                </div>
+                <div class="textSection">
+                    I have this ripple effect running in a vertex shader. The big G Boss casts a ray into the ground, on hit the coords put into the vertex shader via uniforms.
+                    
                 </div>
             </div>
         </div>
