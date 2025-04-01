@@ -10,7 +10,7 @@ import { BufferGeometry } from 'three';
 export class MandlebrotComponent implements OnInit, AfterViewInit {
   @ViewChild ('canvas') private canvasRef: ElementRef;
   @Input() public size: number = 200;
-  @Input() public texture: string = "/assets/texture.jpg";
+  @Input() public texture: string = "assets/texture.jpg";
 
   @Input() public cameraZ: number = 1;
   @Input() public fieldOfView: number = 1;

@@ -16,7 +16,7 @@ export class CandleComponent implements OnInit, AfterViewInit {
   @Input() public rotationSpeedX: number = 0.05;
   @Input() public rotationSpeedY: number = 0.01;
   @Input() public size: number = 200;
-  @Input() public texture: string = "/assets/texture.jpg";
+  @Input() public texture: string = "assets/texture.jpg";
 
   @Input() public cameraZ: number = 600;
   @Input() public fieldOfView: number = .8;
@@ -36,7 +36,7 @@ export class CandleComponent implements OnInit, AfterViewInit {
   private material = new THREE.MeshPhongMaterial({ color: 0xFF8001 });
 
   //candle flame
-  private flameTexture = new THREE.TextureLoader().load("../assets/firesheet.png");
+  private flameTexture = new THREE.TextureLoader().load("assets/firesheet.png");
   private flameAnimation = new TextureAnimator(this.flameTexture, 5, 1, 100); // changes source of texture based on sprite sheet
   private flamePlane = new THREE.PlaneGeometry( 2.75, 3, 3 );
   private flameMaterial = new THREE.MeshPhongMaterial({map: this.flameTexture, emissiveMap: this.flameTexture, 
@@ -46,7 +46,7 @@ export class CandleComponent implements OnInit, AfterViewInit {
 
   //floor
   private floorPlane = new THREE.PlaneGeometry( 10, 10, 10 );
-  private floorTexture = new THREE.TextureLoader().load("../assets/floor.png");
+  private floorTexture = new THREE.TextureLoader().load("assets/floor.png");
   //private floorMaterial = new THREE.MeshPhongMaterial({map:this.floorTexture, side:THREE.DoubleSide});
   //private floor material = new THREE.MeshBasicMaterial({map:})
   //private floorMesh = new THREE.Mesh(this.floorPlane, this.floorMaterial);
@@ -95,7 +95,7 @@ export class CandleComponent implements OnInit, AfterViewInit {
     this.camera.position.z = this.cameraZ;
     this.camera.rotation.x = -.018
 
-    this.loader.load("../assets/candleiso.glb", (( gltf ) => {
+    this.loader.load("assets/candleiso.glb", (( gltf ) => {
       this.candle = gltf;
       this.scene.add(this.candle.scene);
     }));
